@@ -1,0 +1,77 @@
+<h1>Modifier livre #{{ book.refLivre }}</h1>
+
+<div class={{this.colorMsgRetour}} role="alert">
+  {{msgRetour}}
+</div>
+
+<div class="card">
+    <div class="card-body">
+      <form>
+        <div class="form-group" style="margin: 20px;">
+            <label class="col-md-4">Réf livre: </label>
+          <input type="text" value="{{book.refLivre}}" class="form-control" #refLivre />
+        </div>
+        <div class="alert alert-danger" hidden>
+          <div>
+            #Réf livre champ obligatoire !
+          </div>
+        </div>
+
+        <div class="form-group" style="margin: 20px;">
+          <label class="col-md-4">Titre: </label>
+          <input type="text" class="form-control" value="{{book.titre}}" #titre/>
+        </div>
+        <div class="alert alert-danger" hidden>
+          <div>
+            Titre champ obligatoire !
+          </div>
+        </div>
+
+        <div class="form-group" style="margin: 20px;">
+          <label class="col-md-4">Auteur:</label>
+          <input type="text" class="form-control"  value="{{book.auteur}}" #auteur />
+        </div>
+        <div class="alert alert-danger" hidden>
+          <div>
+            Auteur champ obligatoire !
+          </div>
+        </div>
+
+        <div class="form-group" style="margin: 20px;">
+            <label class="col-md-4">Date de sortie:</label>
+            <input type="date" class="form-control"  value="{{book.dateSortie}}" #dateSortie />
+          </div>
+          <div class="alert alert-danger" hidden>
+            <div>
+              Date de sortie champ obligatoire !
+            </div>
+        </div>
+
+        <div class="form-group" style="margin: 20px;">
+            <label class="col-md-4">Quantité:</label>
+            <input type="number" class="form-control"  value="{{book.quantite}}" #quantite />
+          </div>
+          <div class="alert alert-danger" hidden >
+            <div>
+              Quantité champ obligatoire !
+            </div>
+        </div>
+
+        <div class="form-group" style="margin: 20px;">
+          <label class="col-md-4">prix Unitaire:</label>
+          <input type="number" class="form-control"  value="{{book.prixUnitaire}}" #prixUnitaire />
+        </div>
+        <div class="alert alert-danger" hidden >
+          <div>
+            prix Unitaire champ obligatoire !
+          </div>
+      </div>
+
+        <div class="form-group" style="margin: 20px;">
+          <button (click) = "update(refLivre.value,titre.value,auteur.value,dateSortie.value,quantite.value,prixUnitaire.value)" type="submit" class="btn btn-primary" >
+            Modifier
+          </button>
+        </div>
+      </form>
+    </div>
+</div>

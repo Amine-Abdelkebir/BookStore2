@@ -1,0 +1,32 @@
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td class="d"> <strong> Réf </strong> </td> 
+                <td class="d"> <strong> Titre </strong> </td>
+                <td class="d"> <strong> Date de sortie </strong> </td>
+                <td class="d"> <strong> Auteur </strong> </td>
+                <td class="d"> <strong> Prix unitaire </strong> </td>
+                <td class="d"> <strong> Quantité </strong> </td>
+                <td colspan="3" class="d"> <strong> Actions </strong> </td>
+            </tr>
+        </thead>
+      
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td>#{{book.refLivre }}</td>
+                <td>{{ book.titre }}</td>
+                <td>{{ book.dateSortie }}</td>
+                <td>{{ book.auteur }}</td>
+                <td>{{ book.prixUnitaire }}</td>
+                <td>{{ book.quantite }}</td>
+                <td><a [routerLink] = "['get', book.refLivre]" class="btn btn-primary">Modifier</a></td>
+                <td><a (click)="delete(book.refLivre)" class="btn btn-danger">Supprimer</a></td>
+                <td>
+                    <input type="number" #quantity value="1" min="1" max="5">&nbsp;
+                    <a (click)="addToCart(book.refLivre,quantity.value)" class="btn btn-outline-secondary">+Panier</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

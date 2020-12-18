@@ -1,0 +1,77 @@
+<h1>Ajouter un livre</h1>
+
+<div class={{this.colorMsgRetour}} role="alert">
+  {{msgRetour}}
+</div>
+
+<div class="card">
+    <div class="card-body">
+      <form>
+        <div class="form-group" style="margin: 20px;">
+            <label class="col-md-4">Réf livre: </label>
+          <input type="text" class="form-control" #refLivre />
+        </div>
+        <div class="alert alert-danger" hidden>
+          <div>
+            #Réf livre champ obligatoire !
+          </div>
+        </div>
+
+        <div class="form-group" style="margin: 20px;">
+          <label class="col-md-4">Titre: </label>
+          <input type="text" class="form-control" #titre/>
+        </div>
+        <div class="alert alert-danger" hidden>
+          <div>
+            Titre champ obligatoire !
+          </div>
+        </div>
+
+        <div class="form-group" style="margin: 20px;">
+          <label class="col-md-4">Auteur:</label>
+          <input type="text" class="form-control" #auteur />
+        </div>
+        <div class="alert alert-danger" hidden>
+          <div>
+            Auteur champ obligatoire !
+          </div>
+        </div>
+
+        <div class="form-group" style="margin: 20px;">
+            <label class="col-md-4">Date de sortie:</label>
+            <input type="date" class="form-control" #dateSortie />
+          </div>
+          <div class="alert alert-danger" hidden>
+            <div>
+              Date de sortie champ obligatoire !
+            </div>
+        </div>
+
+        <div class="form-group" style="margin: 20px;">
+            <label class="col-md-4">Quantite :</label>
+            <input type="number" class="form-control" value="1" #quantite />
+          </div>
+          <div class="alert alert-danger" hidden >
+            <div>
+              Quantite champ obligatoire !
+            </div>
+        </div>
+
+        <div class="form-group" style="margin: 20px;">
+          <label class="col-md-4">prix Unitaire :</label>
+          <input type="number" class="form-control" #prixUnitaire />
+        </div>
+        <div class="alert alert-danger" hidden >
+          <div>
+            Prix unitaire champ obligatoire !
+          </div>
+      </div>
+
+        <div class="form-group" style="margin: 20px;">
+          <button (click) = "add(refLivre.value,titre.value,auteur.value,dateSortie.value,quantite.value,prixUnitaire.value,$event)" type="submit" class="btn btn-primary" >
+            Ajouter
+          </button>
+        </div>
+      </form>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <td class="d"> <strong> Réf </strong> </td> 
+            <td class="d"> <strong> Titre </strong> </td>
+            <td class="d"> <strong> Date de sortie </strong> </td>
+            <td class="d"> <strong> Auteur </strong> </td>
+            <td class="d"> <strong> Prix unitaire </strong> </td>
+            <td class="d"> <strong> Quantité </strong> </td>
+            <td colspan="1" class="d"> <strong> Actions </strong> </td>
+        </tr>
+        </thead>
+      
+        <tbody>
+            <tr *ngFor="let book of books; let i=index">
+                <td>#{{book.refLivre }}</td>
+                <td>{{ book.titre }}</td>
+                <td>{{ book.dateSortie }}</td>
+                <td>{{ book.auteur }}</td>
+                <td>{{ book.prixUnitaire }} DT</td>
+                <td>{{quantities[i]}}</td>
+                <td><a (click)="delete(book.refLivre)" class="btn btn-danger">Supprimer</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<HR style="size: 2; color:black; background-color: black; margin-top: -17px;">
+
+<p style="margin-left: 1000px; font-size: 20px; margin-top: 25px;"> <strong>Total =</strong> {{ total }} DT</p>
+
+<button (click)="purchase()" type="button" class="btn btn-success" style="width: 150px;"> Achat </button>
